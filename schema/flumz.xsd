@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:lup="http://www.landuseplanning.la/flumz" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.landuseplanning.la/flumz" elementFormDefault="qualified" version="1.0">
+  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
+  <xs:element name="FeatureCollection" type="lup:FeatureCollectionType" substitutionGroup="gml:_FeatureCollection"/>
+  <xs:complexType name="FeatureCollectionType">
+    <xs:complexContent>
+      <xs:extension base="gml:AbstractFeatureCollectionType">
+        <xs:attribute name="lockId" type="xs:string" use="optional"/>
+        <xs:attribute name="scope" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="flumz" type="lup:flumz_Type" substitutionGroup="gml:_Feature"/>
+  <xs:complexType name="flumz_Type">
+    <xs:complexContent>
+      <xs:extension base="gml:AbstractFeatureType">
+        <xs:sequence>
+          <xs:element name="geometryProperty" type="gml:MultiPolygonPropertyType" nillable="false" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Buffer" nillable="false" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:boolean"/>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Name" nillable="false" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="MZ_Code" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="20"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="Sub_Cat" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="20"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="TypeZ_ID" nillable="false" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="10"/>
+                <xs:enumeration value="AZ"/>
+                <xs:enumeration value="BZ"/>
+                <xs:enumeration value="CZ"/>
+                <xs:enumeration value="DZ"/>
+                <xs:enumeration value="FZ"/>
+                <xs:enumeration value="IZ"/>
+                <xs:enumeration value="RZ"/>
+                <xs:enumeration value="WZ"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="TypeZ_E" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="30"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CatZ_ID" nillable="false" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="15"/>
+                <xs:enumeration value="AZ_1"/>
+                <xs:enumeration value="AZ_2"/>
+                <xs:enumeration value="AZ_3"/>
+                <xs:enumeration value="AZ_4"/>
+                <xs:enumeration value="AZ_5"/>
+                <xs:enumeration value="AZ_6"/>
+                <xs:enumeration value="AZ_7"/>
+                <xs:enumeration value="AZ_8"/>
+                <xs:enumeration value="AZ_9"/>
+                <xs:enumeration value="AZ_10"/>
+                <xs:enumeration value="BZ_1"/>
+                <xs:enumeration value="BZ_2"/>
+                <xs:enumeration value="BZ_3"/>
+                <xs:enumeration value="BZ_4"/>
+                <xs:enumeration value="CZ_1"/>
+                <xs:enumeration value="CZ_2"/>
+                <xs:enumeration value="CZ_3"/>
+                <xs:enumeration value="DZ_1"/>
+                <xs:enumeration value="DZ_2"/>
+                <xs:enumeration value="FZ_1"/>
+                <xs:enumeration value="FZ_2"/>
+                <xs:enumeration value="FZ_3"/>
+                <xs:enumeration value="FZ_4"/>
+                <xs:enumeration value="FPZ_5"/>
+                <xs:enumeration value="IZ_1"/>
+                <xs:enumeration value="IZ_2"/>
+                <xs:enumeration value="IZ_3"/>
+                <xs:enumeration value="IZ_4"/>
+                <xs:enumeration value="RZ_1"/>
+                <xs:enumeration value="RZ_2"/>
+                <xs:enumeration value="RZ_3"/>
+                <xs:enumeration value="RZ_4"/>
+                <xs:enumeration value="RZ_5"/>
+                <xs:enumeration value="RZ_6"/>
+                <xs:enumeration value="WZ_1"/>
+                <xs:enumeration value="WZ_2"/>
+                <xs:enumeration value="WZ_3"/>
+                <xs:enumeration value="WZ_4"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CatZ_E" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CatZ_L" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="SubCatZ_E" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="70"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="SubCatZ_L" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="70"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="SubCatZ" nillable="true" minOccurs="0" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="50"/>
+                <xs:enumeration value="AZ_101"/>
+                <xs:enumeration value="AZ_102"/>
+                <xs:enumeration value="AZ_103"/>
+                <xs:enumeration value="AZ_104"/>
+                <xs:enumeration value="AZ_201"/>
+                <xs:enumeration value="AZ_301"/>
+                <xs:enumeration value="AZ_302"/>
+                <xs:enumeration value="AZ_303"/>
+                <xs:enumeration value="AZ_304"/>
+                <xs:enumeration value="AZ_401"/>
+                <xs:enumeration value="AZ_501"/>
+                <xs:enumeration value="AZ_601"/>
+                <xs:enumeration value="AZ_602"/>
+                <xs:enumeration value="AZ_603"/>
+                <xs:enumeration value="AZ_604"/>
+                <xs:enumeration value="AZ_605"/>
+                <xs:enumeration value="AZ_606"/>
+                <xs:enumeration value="AZ_607"/>
+                <xs:enumeration value="AZ_608"/>
+                <xs:enumeration value="AZ_701"/>
+                <xs:enumeration value="AZ_702"/>
+                <xs:enumeration value="AZ_703"/>
+                <xs:enumeration value="AZ_801"/>
+                <xs:enumeration value="AZ_802"/>
+                <xs:enumeration value="AZ_803"/>
+                <xs:enumeration value="AZ_901"/>
+                <xs:enumeration value="AZ_1001"/>
+                <xs:enumeration value="AZ_1002"/>
+                <xs:enumeration value="AZ_1003"/>
+                <xs:enumeration value="BZ_101"/>
+                <xs:enumeration value="BZ_201"/>
+                <xs:enumeration value="BZ_301"/>
+                <xs:enumeration value="BZ_401"/>
+                <xs:enumeration value="BZ_402"/>
+                <xs:enumeration value="BZ_403"/>
+                <xs:enumeration value="BZ_404"/>
+                <xs:enumeration value="BZ_405"/>
+                <xs:enumeration value="BZ_406"/>
+                <xs:enumeration value="CZ_101"/>
+                <xs:enumeration value="CZ_201"/>
+                <xs:enumeration value="CZ_202"/>
+                <xs:enumeration value="CZ_301"/>
+                <xs:enumeration value="CZ_302"/>
+                <xs:enumeration value="DZ_101"/>
+                <xs:enumeration value="DZ_102"/>
+                <xs:enumeration value="FZ_101"/>
+                <xs:enumeration value="FZ_102"/>
+                <xs:enumeration value="FZ_103"/>
+                <xs:enumeration value="FZ_104"/>
+                <xs:enumeration value="FZ_105"/>
+                <xs:enumeration value="FZ_106"/>
+                <xs:enumeration value="FZ_201"/>
+                <xs:enumeration value="FZ_202"/>
+                <xs:enumeration value="FZ_301"/>
+                <xs:enumeration value="FZ_302"/>
+                <xs:enumeration value="FZ_401"/>
+                <xs:enumeration value="FZ_402"/>
+                <xs:enumeration value="FZ_403"/>
+                <xs:enumeration value="FZ_501"/>
+                <xs:enumeration value="FZ_502"/>
+                <xs:enumeration value="FZ_503"/>
+                <xs:enumeration value="IZ_101"/>
+                <xs:enumeration value="IZ_201"/>
+                <xs:enumeration value="IZ_301"/>
+                <xs:enumeration value="IZ_401"/>
+                <xs:enumeration value="RZ_101"/>
+                <xs:enumeration value="RZ_201"/>
+                <xs:enumeration value="RZ_301"/>
+                <xs:enumeration value="RZ_401"/>
+                <xs:enumeration value="RZ_501"/>
+                <xs:enumeration value="RZ_601"/>
+                <xs:enumeration value="WZ_101"/>
+                <xs:enumeration value="WZ_102"/>
+                <xs:enumeration value="WZ_103"/>
+                <xs:enumeration value="WZ_104"/>
+                <xs:enumeration value="WZ_201"/>
+                <xs:enumeration value="WZ_202"/>
+                <xs:enumeration value="WZ_203"/>
+                <xs:enumeration value="WZ_204"/>
+                <xs:enumeration value="WZ_301"/>
+                <xs:enumeration value="WZ_401"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="area_m2" nillable="false" minOccurs="1" maxOccurs="1">
+            <xs:simpleType>
+              <xs:restriction base="xs:double"/>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
