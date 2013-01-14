@@ -1,5 +1,7 @@
 # Resources used on landuseplanning.la
 
+This repository contains schema and style files related to land use planning in Laos and its ongoing standardization process.
+
 ## Schema
 
 Directory `schema` contains a [GML Application Schema](https://en.wikipedia.org/wiki/Geography_Markup_Language#Application_schema) based on the [GML Simple Features Profile](http://portal.opengeospatial.org/files/?artifact_id=42729) that implements the Forest and Land Use Management Zones (short: FLUMZ) data model. 
@@ -17,7 +19,7 @@ Convert your Shapefile to GML with
 
 ## Styles
 
-Directory `styles` contains a [Styled Layer Descriptor](http://www.opengeospatial.org/standards/sld) (SLD) file and associated icons for use with [GeoServer](http://www.geoserver.org/).
+Directory `styles` contains a [Styled Layer Descriptor](http://www.opengeospatial.org/standards/sld) (SLD) file and associated icons to symbolize Forest and Land Use Management Zones (FLUMZ) layers with [GeoServer](http://www.geoserver.org/). The style has not been tested with other SLD capable applications but may work as well.
 
 1. Copy all icons to the `GEOSERVER_DATA_DIR/styles`
 2. Add `flumz.sld` as new style using the [Web Administration Interface](http://docs.geoserver.org/stable/en/user/webadmin/data/styles.html)
