@@ -7,9 +7,13 @@ The FLUMZ application schema is still under development and thus subject to chan
 
 ### Validate FLUMZ geodata
 
-1. Convert your Shapefile to GML with `ogr2ogr -f GML -nln flumz -dsco PREFIX=lup -dsco TARGET_NAMESPACE=http://www.landuseplanning.la/flumz -dsco XSISCHEMAURI=flumz.xsd -a_srs EPSG:32648 -nlt MULTIPOLYGON dst_dataset_name.gml src_dataset_name.shp`
-2. Copy `flumz.xsd` to the same directory as `dst_datasource_name.gml`
-3. Validate the dataset with `xmlstarlet val --err --xsd flumz.xsd dst_dataset_name.gml` or any other XML validation software
+Convert your Shapefile to GML with
+
+    ogr2ogr -f GML -nln flumz -dsco PREFIX=lup -dsco TARGET_NAMESPACE=http://www.landuseplanning.la/flumz
+    -dsco XSISCHEMAURI=flumz.xsd -a_srs EPSG:32648 -nlt MULTIPOLYGON dst_dataset_name.gml src_dataset_name.shp
+    
+1. Copy `flumz.xsd` to the same directory as `dst_datasource_name.gml`
+2. Validate the dataset with `xmlstarlet val --err --xsd flumz.xsd dst_dataset_name.gml` or any other XML validation software
 
 ## Styles
 
